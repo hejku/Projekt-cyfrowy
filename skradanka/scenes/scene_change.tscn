@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://jpn60i77xbd0"]
+
+[ext_resource type="Script" uid="uid://1xa4undcx0m5" path="res://scripts/scene_change.gd" id="1_u5sjq"]
+[ext_resource type="PackedScene" uid="uid://dj8rjpd5h0a6l" path="res://scenes/world_2.tscn" id="2_m7lnu"]
+
+[node name="scene_change" type="Node2D"]
+script = ExtResource("1_u5sjq")
+
+[node name="Room 1" parent="." instance=ExtResource("2_m7lnu")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Room 1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -127.0
+offset_top = 81.0
+offset_right = -87.0
+offset_bottom = 121.0
