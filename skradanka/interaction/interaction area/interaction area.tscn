@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cojoynj5fv3g3"]
+
+[ext_resource type="Script" uid="uid://wyhysjht862l" path="res://interaction/interaction area/interaction_area.gd" id="1_0supn"]
+
+[sub_resource type="GDScript" id="GDScript_0supn"]
+script/source = "extends Area2D
+
+var entered = false
+
+func _on_Area2D_body_entered(body: PhysicsBody2D):
+	entered = true
+	
+	
+func _on_Area2D_body_exciteed(body:):
+	entered = false
+
+func _process(delta):
+	if entered == true:
+		if Input.is_action_just_pressed(\"ui_accept\"):
+			get_tree().change_scene(\"res://world.2.tscn\")
+"
+
+[node name="InteractionArea" type="Area2D"]
+visible = false
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_0supn")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = SubResource("GDScript_0supn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
