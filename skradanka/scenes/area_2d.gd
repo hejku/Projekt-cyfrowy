@@ -12,6 +12,6 @@ func _on_Area2D_body_exited(body):
 
 func _process(delta):
 	if entered == true:
-		if Input.is_action_just_pressed("accept"):
+		if Input.is_action_just_pressed("ui_accept"):
 			get_tree().change_scene("res://minigame.tscn")
 		
