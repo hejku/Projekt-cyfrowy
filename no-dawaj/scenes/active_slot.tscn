@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm7srjr2s7nm0"]
+
+[ext_resource type="PackedScene" uid="uid://crg20ae0nv0e8" path="res://scenes/slot.tscn" id="1_briyl"]
+[ext_resource type="Script" uid="uid://dnirenoh8xmrr" path="res://script/active_slot.gd" id="2_tdhsd"]
+
+[node name="ActiveSlot" instance=ExtResource("1_briyl")]
+offset_right = 153.0
+offset_bottom = 157.0
+script = ExtResource("2_tdhsd")

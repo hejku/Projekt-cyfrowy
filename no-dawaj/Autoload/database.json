@@ -1,0 +1,7 @@
+{
+	"0" : {
+		"texture" : "treasure.png",
+		"slot_type" : 2,
+		"ATK" : 3
+	}
+}

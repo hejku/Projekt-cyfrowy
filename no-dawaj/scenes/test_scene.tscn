@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://dupqamta61lk"]
+
+[ext_resource type="Script" uid="uid://duwgafltv8ef7" path="res://script/inventory.gd" id="1_7ddre"]
+[ext_resource type="PackedScene" uid="uid://crg20ae0nv0e8" path="res://scenes/slot.tscn" id="1_g7g4h"]
+[ext_resource type="Script" uid="uid://b357p2mb6i48" path="res://script/ui.gd" id="1_wtsjf"]
+[ext_resource type="Script" uid="uid://clvqtyyjvn33f" path="res://script/character.gd" id="2_nd71p"]
+[ext_resource type="PackedScene" uid="uid://d3yhyd42o7dvc" path="res://scenes/passive_slot.tscn" id="3_7ddre"]
+[ext_resource type="PackedScene" uid="uid://pqs2mk2lxgec" path="res://scenes/player.tscn" id="5_3qnke"]
+[ext_resource type="PackedScene" uid="uid://cm7srjr2s7nm0" path="res://scenes/active_slot.tscn" id="6_rnaij"]
+[ext_resource type="PackedScene" uid="uid://ejyfx1y2ccae" path="res://scenes/sprite_2d.tscn" id="6_wtsjf"]
+
+[node name="TestScene" type="Node2D"]
+position = Vector2(17, 44)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_wtsjf")
+
+[node name="Inventory" type="GridContainer" parent="UI"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_right = 460.0
+offset_bottom = 226.0
+columns = 3
+script = ExtResource("1_7ddre")
+
+[node name="slot" parent="UI/Inventory" instance=ExtResource("1_g7g4h")]
+layout_mode = 2
+
+[node name="slot2" parent="UI/Inventory" instance=ExtResource("1_g7g4h")]
+layout_mode = 2
+
+[node name="Character" type="Control" parent="UI"]
+anchors_preset = 0
+offset_left = 35.0
+offset_top = 92.0
+offset_right = 75.0
+offset_bottom = 132.0
+script = ExtResource("2_nd71p")
+
+[node name="PassiveSlot" parent="UI/Character" instance=ExtResource("3_7ddre")]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 97.0
+offset_right = 375.0
+offset_bottom = 175.0
+slot_type = 1
+
+[node name="ActiveSlot" parent="UI/Character" instance=ExtResource("6_rnaij")]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 16.0
+offset_right = 376.0
+offset_bottom = 88.0
+slot_type = 4
+
+[node name="ATK" type="Label" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 53.0
+offset_right = 46.0
+offset_bottom = 102.0
+text = "0
+"
+
+[node name="Player" parent="." instance=ExtResource("5_3qnke")]
+position = Vector2(337, 384)
+
+[node name="AbstractItem" parent="." instance=ExtResource("6_wtsjf")]
+position = Vector2(702, 282)
+
+[node name="AbstractItem2" parent="." instance=ExtResource("6_wtsjf")]
+position = Vector2(956, 378)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://crg20ae0nv0e8"]
+
+[ext_resource type="Script" uid="uid://dyb7j7uk7nmwx" path="res://script/slot.gd" id="1_4v6ba"]
+[ext_resource type="Script" uid="uid://cxp4tknpqelt0" path="res://script/stats.gd" id="2_ic0fu"]
+
+[node name="slot" type="PanelContainer"]
+offset_right = 243.0
+offset_bottom = 223.0
+script = ExtResource("1_4v6ba")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 1
+script = ExtResource("2_ic0fu")
+
+[node name="debug" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
